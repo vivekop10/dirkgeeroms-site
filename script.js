@@ -820,3 +820,22 @@ function closeLightbox(overlay) {
   setTimeout(() => overlay.remove(), 300);
 }
 
+/* --- Universal Gallery Image Fallback Interceptor --- */
+(function() {
+  window.addEventListener('error', function(e) {
+    if (e.target && e.target.tagName === 'IMG') {
+      const img = e.target;
+      const src = img.src || '';
+      // If image failed and contains gallery or wp-content/gallery
+      if (src.includes('gallery/') && !img.dataset.fallbackTried) {
+        img.dataset.fallbackTried = 'true';
+        const match = src.match(/gallery\/(.*)$/i);
+        if (match && match[1]) {
+          img.src = 'https://test.dirkgeeroms.be/wp-content/gallery/' + match[1];
+        }
+      }
+    }
+  }, true);
+})();
+
+
