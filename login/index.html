@@ -106,14 +106,32 @@
           <div class="card-body page-content">
             
         <h2>Login</h2>
-        <form class="login-form" style="max-width:400px;">
-          <label for="page-login-user">Username or Email</label>
-          <input type="text" id="page-login-user" name="log" required style="width:100%;padding:10px 14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);">
+        <div id="loginError" style="display:none;padding:10px 14px;margin-bottom:16px;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);border-radius:8px;color:#dc2626;font-size:0.9rem;"></div>
+        <div id="loginSuccess" style="display:none;padding:10px 14px;margin-bottom:16px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:8px;color:#22c55e;font-size:0.9rem;"></div>
+        
+        <form class="login-form" id="firebaseLoginForm" style="max-width:420px;">
+          <label for="page-login-user">Email Address</label>
+          <input type="email" id="page-login-user" name="log" required placeholder="your@email.com" style="width:100%;padding:12px 14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:0.95rem;">
           <label for="page-login-pass">Password</label>
-          <input type="password" id="page-login-pass" name="pwd" required style="width:100%;padding:10px 14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);">
-          <button type="submit" class="btn-login">Log In</button>
-          <div style="margin-top:12px;"><a href="../forgot-password/index.html">Forgot your password?</a> | <a href="../register/index.html">Register</a></div>
+          <input type="password" id="page-login-pass" name="pwd" required placeholder="••••••••" style="width:100%;padding:12px 14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:0.95rem;">
+          <button type="submit" class="btn-login" id="loginBtn" style="width:100%;padding:12px;font-size:1rem;">Log In</button>
         </form>
+
+        <div style="max-width:420px;margin-top:16px;">
+          <div style="display:flex;align-items:center;gap:12px;margin:20px 0;">
+            <hr style="flex:1;border:none;border-top:1px solid var(--border);">
+            <span style="color:var(--text-muted);font-size:0.85rem;">or</span>
+            <hr style="flex:1;border:none;border-top:1px solid var(--border);">
+          </div>
+          <button id="googleSignInBtn" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;font-size:0.95rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;transition:all 0.2s;">
+            <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            Sign in with Google
+          </button>
+        </div>
+
+        <div style="margin-top:16px;font-size:0.9rem;">
+          <a href="../forgot-password/index.html">Forgot your password?</a> &nbsp;|&nbsp; <a href="../register/index.html">Create an account</a>
+        </div>
       
           </div>
         </div>
@@ -141,6 +159,76 @@
     </div>
   </footer>
 
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
+  <script src="../firebase-config.js"></script>
   <script src="../script.js"></script>
+  <script>
+    // Firebase Login Logic
+    const loginForm = document.getElementById('firebaseLoginForm');
+    const loginError = document.getElementById('loginError');
+    const loginSuccess = document.getElementById('loginSuccess');
+    const googleBtn = document.getElementById('googleSignInBtn');
+
+    function showError(msg) {
+      loginError.textContent = msg;
+      loginError.style.display = 'block';
+      loginSuccess.style.display = 'none';
+    }
+    function showSuccess(msg) {
+      loginSuccess.textContent = msg;
+      loginSuccess.style.display = 'block';
+      loginError.style.display = 'none';
+    }
+
+    // Check if already logged in
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        showSuccess('You are already logged in as ' + (user.displayName || user.email) + '. Redirecting...');
+        setTimeout(() => window.location.href = '../index.html', 1500);
+      }
+    });
+
+    // Email/Password Login
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('page-login-user').value.trim();
+      const password = document.getElementById('page-login-pass').value;
+      const btn = document.getElementById('loginBtn');
+      btn.disabled = true;
+      btn.textContent = 'Logging in...';
+      try {
+        await firebaseSignIn(email, password);
+        showSuccess('Login successful! Redirecting...');
+        setTimeout(() => window.location.href = '../index.html', 1000);
+      } catch (err) {
+        let msg = 'Login failed.';
+        if (err.code === 'auth/user-not-found') msg = 'No account found with this email. Please register first.';
+        else if (err.code === 'auth/wrong-password') msg = 'Incorrect password. Please try again.';
+        else if (err.code === 'auth/invalid-email') msg = 'Please enter a valid email address.';
+        else if (err.code === 'auth/invalid-credential') msg = 'Invalid email or password. Please check and try again.';
+        showError(msg);
+        btn.disabled = false;
+        btn.textContent = 'Log In';
+      }
+    });
+
+    // Google Sign-In
+    googleBtn.addEventListener('click', async () => {
+      try {
+        await firebaseSignInWithGoogle();
+        showSuccess('Google login successful! Redirecting...');
+        setTimeout(() => window.location.href = '../index.html', 1000);
+      } catch (err) {
+        if (err.code !== 'auth/popup-closed-by-user') {
+          showError('Google sign-in failed: ' + err.message);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
+

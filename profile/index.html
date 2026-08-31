@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile — dirkgeeroms.be</title>
+  <meta name="description" content="Manage your account profile, settings, and role on dirkgeeroms.be.">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .profile-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      max-width: 680px;
+    }
+    .profile-header-flex {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-avatar-large {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      object-fit: cover;
+      box-shadow: 0 4px 14px rgba(65, 166, 42, 0.25);
+    }
+    .role-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+    .role-admin { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .role-teacher { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .role-student { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
+    .profile-section {
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .profile-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../index.html">dirkgeeroms.be</a></h1>
+        <span class="site-tagline">Flipping the classroom</span>
+      </div>
+
+      <div class="header-actions">
+        <button id="searchToggle" class="header-action-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button id="themeToggle" class="header-action-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <div class="nav-item"><a href="../contact/index.html">contact</a></div>
+        <div class="nav-item"><a href="../links/index.html">links</a></div>
+        <div class="nav-item"><a href="../simulations/index.html">simulations</a></div>
+        <div class="nav-item"><a href="../filebrowser/index.html">filebrowser</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="content-area">
+      <article class="card page-content-card">
+        <div class="card-header">
+          <h1 class="card-title page-main-title">User Profile</h1>
+        </div>
+        <div class="card-body">
+          <span id="breadcrumbs" class="breadcrumbs">You are here: 
+            <a href="../index.html">home</a> &raquo; <span class="breadcrumb_last">Profile</span>
+          </span>
+
+          <div id="loadingState" style="padding: 2rem; text-align: center; color: var(--text-muted);">
+            Loading profile information...
+          </div>
+
+          <div id="loggedOutState" style="display:none; padding: 2rem; text-align: center;">
+            <p style="margin-bottom: 1rem;">You are not currently logged in.</p>
+            <a href="../login/index.html" class="btn-login" style="display:inline-block; padding: 0.65rem 1.5rem; text-decoration:none;">Log In Now</a>
+          </div>
+
+          <div id="profileContainer" class="profile-card" style="display: none; margin-top: 1.5rem;">
+            
+            <div id="profileAlert" style="display:none;padding:12px 16px;margin-bottom:16px;border-radius:8px;font-size:0.92rem;"></div>
+
+            <!-- Profile Header -->
+            <div class="profile-header-flex">
+              <div id="avatarContainer">
+                <div class="profile-avatar-large" id="avatarLetter">U</div>
+                <img id="avatarImg" class="profile-avatar-large" style="display:none;" alt="Avatar">
+              </div>
+              <div style="flex:1;">
+                <div style="display:flex; align-items:center; gap: 0.75rem; flex-wrap: wrap;">
+                  <h2 id="profileDisplayName" style="margin:0; font-size:1.4rem;">User</h2>
+                  <span id="profileRoleBadge" class="role-badge role-student">Student</span>
+                </div>
+                <p id="profileEmail" style="color:var(--text-muted); margin:0.35rem 0 0.75rem; font-size:0.95rem;">user@example.com</p>
+                
+                <div id="adminPanelBanner" style="display:none; margin-top:0.5rem;">
+                  <a href="../admin/index.html" class="btn-login" style="display:inline-flex; align-items:center; gap:6px; background:#ef4444; border-color:#ef4444; padding:6px 14px; font-size:0.88rem; text-decoration:none;">
+                    ⚙️ Open Admin Control Panel
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Edit Details Form -->
+            <div class="profile-section" style="margin-top:0; border-top:none; padding-top:0;">
+              <h3 class="profile-section-title">✏️ Edit Personal Details</h3>
+              <form id="editProfileForm">
+                <div style="margin-bottom: 14px;">
+                  <label for="editDisplayName" style="display:block; font-weight:600; margin-bottom:6px;">Display Name</label>
+                  <input type="text" id="editDisplayName" style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);">
+                </div>
+                <button type="submit" class="btn-login" id="saveProfileBtn">Save Changes</button>
+              </form>
+            </div>
+
+            <!-- Admin Privilege Activation -->
+            <div class="profile-section" id="adminSecretSection">
+              <h3 class="profile-section-title">🛡️ Admin & Teacher Access Key</h3>
+              <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:10px;">
+                Enter your administrative key to unlock content editing, photo manager, and CMS tools.
+              </p>
+              <form id="adminKeyForm" style="display:flex; gap:10px; flex-wrap:wrap;">
+                <input type="password" id="adminSecretKeyInput" placeholder="Enter secret admin key..." style="flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);">
+                <button type="submit" class="btn-login" style="background:#4f46e5; border-color:#4f46e5;">Activate Admin</button>
+              </form>
+            </div>
+
+            <!-- Sign Out Button -->
+            <div class="profile-section">
+              <button id="logoutBtn" type="button" style="padding:10px 20px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); color:#ef4444; border-radius:8px; cursor:pointer; font-weight:600;">
+                Log Out of Account
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        &#169; Copyleft 2026 <a href="../index.html">dirkgeeroms.be</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
+  <script src="../firebase-config.js"></script>
+  <script src="../script.js"></script>
+  <script>
+    let currentUserUid = null;
+
+    function showAlert(msg, isSuccess = true) {
+      const alert = document.getElementById('profileAlert');
+      alert.textContent = msg;
+      alert.style.display = 'block';
+      alert.style.background = isSuccess ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)';
+      alert.style.borderColor = isSuccess ? 'rgba(34,197,94,0.3)' : 'rgba(239,68,68,0.3)';
+      alert.style.color = isSuccess ? '#22c55e' : '#ef4444';
+      setTimeout(() => alert.style.display = 'none', 4000);
+    }
+
+    auth.onAuthStateChanged(async (user) => {
+      document.getElementById('loadingState').style.display = 'none';
+      if (!user) {
+        document.getElementById('loggedOutState').style.display = 'block';
+        document.getElementById('profileContainer').style.display = 'none';
+        return;
+      }
+
+      currentUserUid = user.uid;
+      document.getElementById('profileContainer').style.display = 'block';
+      document.getElementById('loggedOutState').style.display = 'none';
+
+      const displayName = user.displayName || user.email.split('@')[0];
+      document.getElementById('profileDisplayName').textContent = displayName;
+      document.getElementById('profileEmail').textContent = user.email;
+      document.getElementById('editDisplayName').value = displayName;
+
+      if (user.photoURL) {
+        document.getElementById('avatarImg').src = user.photoURL;
+        document.getElementById('avatarImg').style.display = 'block';
+        document.getElementById('avatarLetter').style.display = 'none';
+      } else {
+        document.getElementById('avatarLetter').textContent = displayName.charAt(0).toUpperCase();
+      }
+
+      // Fetch role from Firestore
+      try {
+        const profile = await getUserProfile(user.uid);
+        const role = (profile && profile.role) || 'student';
+        const badge = document.getElementById('profileRoleBadge');
+        badge.textContent = role;
+        badge.className = 'role-badge role-' + role;
+
+        if (role === 'admin' || role === 'teacher') {
+          document.getElementById('adminPanelBanner').style.display = 'block';
+        }
+      } catch (e) {
+        console.error('Error fetching role:', e);
+      }
+    });
+
+    // Update Profile Info
+    document.getElementById('editProfileForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const newName = document.getElementById('editDisplayName').value.trim();
+      if (!newName || !currentUserUid) return;
+
+      try {
+        await updateUserProfile(currentUserUid, { displayName: newName });
+        document.getElementById('profileDisplayName').textContent = newName;
+        document.getElementById('avatarLetter').textContent = newName.charAt(0).toUpperCase();
+        showAlert('Profile updated successfully!');
+      } catch (err) {
+        showAlert('Failed to update profile: ' + err.message, false);
+      }
+    });
+
+    // Claim Admin with Key
+    document.getElementById('adminKeyForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const key = document.getElementById('adminSecretKeyInput').value.trim();
+      if (!key || !currentUserUid) return;
+
+      try {
+        await promoteToAdmin(currentUserUid, key);
+        showAlert('🎉 Admin privileges successfully activated!');
+        const badge = document.getElementById('profileRoleBadge');
+        badge.textContent = 'admin';
+        badge.className = 'role-badge role-admin';
+        document.getElementById('adminPanelBanner').style.display = 'block';
+        document.getElementById('adminSecretKeyInput').value = '';
+      } catch (err) {
+        showAlert('Invalid key: ' + err.message, false);
+      }
+    });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', async () => {
+      await firebaseSignOut();
+    });
+  </script>
+</body>
+</html>

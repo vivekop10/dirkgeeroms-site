@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* --- Interactive Login Status System --- */
+/* --- Interactive Login Status System (with Firebase Auth & Roles) --- */
 function initLoginStatus() {
   const loginWidgets = document.querySelectorAll('#login-widget');
   const fbLockedView = document.getElementById('fbLockedView');
@@ -25,52 +26,76 @@ function initLoginStatus() {
   const fbDemoLoginBtn = document.getElementById('fbDemoLoginBtn');
   const fbLogoutBtn = document.getElementById('fbLogoutBtn');
 
-  function getCurrentUser() {
+  function getRelativeRoot() {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const depth = parts.length > 0 && parts[parts.length - 1].endsWith('.html') ? parts.length - 1 : parts.length;
+    return depth > 0 ? '../'.repeat(depth) : './';
+  }
+
+  function getCachedUser() {
     try {
       const u = localStorage.getItem('currentUser');
       return u ? JSON.parse(u) : null;
     } catch (e) { return null; }
   }
 
-  function setCurrentUser(user) {
+  function setCachedUser(user) {
     if (user) localStorage.setItem('currentUser', JSON.stringify(user));
     else localStorage.removeItem('currentUser');
-    renderLoginState();
   }
 
-  function renderLoginState() {
-    const user = getCurrentUser();
-
+  function renderUserUI(user) {
     loginWidgets.forEach(widget => {
       if (user) {
-        // Render Logged-in profile card
+        const root = getRelativeRoot();
+        const role = user.role || 'Student';
+        const isAdmin = role.toLowerCase() === 'admin' || role.toLowerCase() === 'teacher';
+
         widget.innerHTML = `
           <div class="sidebar-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Account
+            My Account
           </div>
-          <div class="user-profile-card">
-            <div class="user-avatar-badge">${user.username.charAt(0).toUpperCase()}</div>
-            <div class="user-details">
-              <strong class="user-name">${escapeHtml(user.username)}</strong>
-              <span class="user-role-tag">${escapeHtml(user.role || 'Student')}</span>
+          <div class="user-profile-card" style="display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div class="user-avatar-badge" style="background:var(--primary); color:#fff; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.1rem;">
+                ${user.username.charAt(0).toUpperCase()}
+              </div>
+              <div class="user-details" style="flex:1; overflow:hidden;">
+                <strong class="user-name" style="display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(user.username)}</strong>
+                <span class="user-role-tag" style="font-size:0.75rem; text-transform:uppercase; padding:2px 6px; border-radius:4px; background:rgba(65,166,42,0.15); color:var(--primary); font-weight:700;">${escapeHtml(role)}</span>
+              </div>
             </div>
-            <div class="user-quick-links">
-              <a href="${getRelativeRoot()}filebrowser/index.html" class="user-link">📁 Filebrowser (Unlocked)</a>
+            
+            <div class="user-quick-links" style="display:flex; flex-direction:column; gap:4px; margin-top:6px; font-size:0.88rem;">
+              <a href="${root}profile/index.html" class="user-link" style="color:var(--text); text-decoration:none; display:flex; align-items:center; gap:6px;">👤 Profile & Settings</a>
+              <a href="${root}filebrowser/index.html" class="user-link" style="color:var(--text); text-decoration:none; display:flex; align-items:center; gap:6px;">📁 Unlocked Filebrowser</a>
+              ${isAdmin ? `<a href="${root}admin/index.html" class="user-link" style="color:#ef4444; font-weight:700; text-decoration:none; display:flex; align-items:center; gap:6px;">⚙️ Admin Control Panel</a>` : ''}
             </div>
-            <button class="btn-logout" id="sidebarLogoutBtn">Log Out</button>
+
+            <button class="btn-logout" id="sidebarLogoutBtn" style="margin-top:6px; padding:6px 10px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.25); color:#ef4444; border-radius:6px; cursor:pointer; font-weight:600; font-size:0.85rem;">Log Out</button>
           </div>
         `;
         const logoutBtn = widget.querySelector('#sidebarLogoutBtn');
-        if (logoutBtn) logoutBtn.addEventListener('click', () => setCurrentUser(null));
+        if (logoutBtn) {
+          logoutBtn.addEventListener('click', async () => {
+            if (typeof firebaseSignOut === 'function') {
+              await firebaseSignOut();
+            } else if (typeof auth !== 'undefined' && auth) {
+              await auth.signOut();
+            }
+            setCachedUser(null);
+            renderUserUI(null);
+          });
+        }
       } else {
-        // Render Login Form
+        const root = getRelativeRoot();
         widget.innerHTML = `
           <div class="sidebar-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             Login Status
           </div>
-          <form class="login-form" id="sidebarLoginForm">
+          <form class="login-form" id="sidebarLoginForm" action="${root}login/index.html">
             <label for="login-user">Username or Email</label>
             <input type="text" id="login-user" name="log" placeholder="e.g. Student" required>
             <label for="login-pass">Password</label>
@@ -78,8 +103,8 @@ function initLoginStatus() {
             <div class="login-actions">
               <button type="submit" class="btn-login">log in</button>
               <div class="login-links">
-                <a href="${getRelativeRoot()}forgot-password/index.html">Forgot?</a>
-                <a href="${getRelativeRoot()}register/index.html">Register</a>
+                <a href="${root}forgot-password/index.html">Forgot?</a>
+                <a href="${root}register/index.html">Register</a>
               </div>
             </div>
           </form>
@@ -88,19 +113,13 @@ function initLoginStatus() {
         if (form) {
           form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const usernameInput = form.querySelector('#login-user');
-            const username = usernameInput ? usernameInput.value.trim() : 'Student';
-            setCurrentUser({
-              username: username || 'Student',
-              role: username.toLowerCase().includes('dirk') || username.toLowerCase().includes('teacher') ? 'Teacher' : 'Student',
-              loggedInAt: new Date().toISOString()
-            });
+            const root = getRelativeRoot();
+            window.location.href = root + 'login/index.html';
           });
         }
       }
     });
 
-    // Update Filebrowser page if on filebrowser
     if (fbLockedView && fbUnlockedView) {
       if (user) {
         fbLockedView.style.display = 'none';
@@ -113,25 +132,51 @@ function initLoginStatus() {
     }
   }
 
-  function getRelativeRoot() {
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    const depth = parts.length > 0 && parts[parts.length - 1].endsWith('.html') ? parts.length - 1 : parts.length;
-    return depth > 0 ? '../'.repeat(depth) : './';
+  // Initial render from local cache for instant UI
+  renderUserUI(getCachedUser());
+
+  // Listen to live Firebase Auth state if SDK is available
+  if (typeof auth !== 'undefined' && auth) {
+    auth.onAuthStateChanged(async (firebaseUser) => {
+      if (firebaseUser) {
+        let role = 'student';
+        try {
+          if (typeof getUserProfile === 'function') {
+            const prof = await getUserProfile(firebaseUser.uid);
+            if (prof && prof.role) role = prof.role;
+          }
+        } catch (e) {}
+
+        const userObj = {
+          uid: firebaseUser.uid,
+          username: firebaseUser.displayName || firebaseUser.email.split('@')[0],
+          email: firebaseUser.email,
+          role: role
+        };
+        setCachedUser(userObj);
+        renderUserUI(userObj);
+      } else {
+        setCachedUser(null);
+        renderUserUI(null);
+      }
+    });
   }
 
   if (fbDemoLoginBtn) {
     fbDemoLoginBtn.addEventListener('click', () => {
-      setCurrentUser({ username: 'Demo Student', role: 'Student' });
+      const u = { username: 'Demo Student', role: 'Student' };
+      setCachedUser(u);
+      renderUserUI(u);
     });
   }
 
   if (fbLogoutBtn) {
-    fbLogoutBtn.addEventListener('click', () => {
-      setCurrentUser(null);
+    fbLogoutBtn.addEventListener('click', async () => {
+      if (typeof firebaseSignOut === 'function') await firebaseSignOut();
+      setCachedUser(null);
+      renderUserUI(null);
     });
   }
-
-  renderLoginState();
 }
 
 /* --- Pop-Up Window Video Player Modal --- */
