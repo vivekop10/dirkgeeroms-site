@@ -1,0 +1,8 @@
+node_modules/
+.vercel
+raw_cache/
+old web/
+image_urls.txt
+download_images.js
+*.log
+wp-content/gallery/

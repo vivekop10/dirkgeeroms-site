@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2023-03-23 — dirkgeeroms.be</title>
+  <meta name="description" content="Dirk Geeroms — Flipping the classroom. Physics teacher resources, forums, videos, and more.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2023-03-23 — dirkgeeroms.be">
+  <meta property="og:url" content="https://test.dirkgeeroms.be/">
+  <meta property="og:site_name" content="dirkgeeroms.be">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../../../index.html">dirkgeeroms.be</a></h1>
+        <span class="site-tagline">Flipping the classroom</span>
+      </div>
+
+      
+      <div class="header-actions">
+        <!-- Search Button -->
+        <button id="searchToggle" class="header-action-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="header-action-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <div class="nav-item">
+          <a href="../../../contact/index.html">contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="../../../spaceheadingdeezers/index.html">Deezers</a>
+          <div class="sub-menu">
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/asgard/index.html">Asgard</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/asgard/asgard-covid/index.html">2020 Asgard-COVID</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-x/index.html">2021 Asgard-X</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-xii/index.html">2023 Asgard-XII</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/astro-pi/index.html">Astro Pi</a>
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/cansat/index.html">CanSat</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/cansat/2022-2023-cansat/index.html">2022-2023 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2023-2024-cansat/index.html">2023-2024 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2025-2026-cansat/index.html">2025-2026 Cansat</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/hemera/index.html">Hemera</a>
+            <a href="../../../spaceheadingdeezers/rmi/index.html">RMI</a>
+            <a href="../../../spaceheadingdeezers/svalbard/index.html">Svalbard</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="../../../photoalbum/index.html">gallery</a>
+        </div>
+        <div class="nav-item">
+          <a href="http://archive.dirkgeeroms.be" target="_blank" rel="noopener">archive</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div id="searchContainer" class="search-overlay" style="display: none;">
+    <div class="search-overlay-inner">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-input-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search lessons, topics, forums, etc..." autocomplete="off">
+        <button id="searchClose" class="search-close-btn">&times;</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="site-main">
+    <div class="content-area">
+      <div class="content-grid">
+        <div class="card" style="grid-column: 1 / -1;">
+          <div class="card-header">
+            <div class="card-title">
+              <nav class="breadcrumb-nav"><a href="../../../index.html">Home</a> &rsaquo; <a href="../../../photoalbum/index.html">gallery</a> &rsaquo; <a href="../../../photoalbum/2022-2023/index.html">2022-2023</a> &rsaquo; <span>2023-03-23</span></nav>
+            </div>
+          </div>
+          <div class="card-body page-content">
+            
+<nav class="crumbs"><a href="../../../index.html">Home</a> › <a href="../../../photoalbum/index.html">gallery</a> › <a href="../../../photoalbum/2022-2023/index.html">2022-2023</a> › <span>2023-03-23</span></nav>
+<article>
+ <h1>2023-03-23</h1>
+ 
+ <div class="content"><!-- default-view.php -->
+<div
+	class="ngg-galleryoverview default-view
+	 ngg-ajax-pagination-none	"
+	id="ngg-gallery-d06bd40f692d3965df3bb67cf44ecb0f-1"
+	data-nextgen-gallery-id="291"
+	data-gallery-id="291"
+		data-gallery-name="2023-03-23"
+	>
+
+		<!-- Thumbnails -->
+				<div id="ngg-image-0" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/120b23ce-12dc-4d1a-9910-d478f23be48d.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/120b23ce-12dc-4d1a-9910-d478f23be48d.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_120b23ce-12dc-4d1a-9910-d478f23be48d.jpg"
+			data-image-id="6252"
+			data-image-name="120b23ce-12dc-4d1a-9910-d478f23be48d.jpg"
+			data-title="120b23ce-12dc-4d1a-9910-d478f23be48d"
+			data-description=""
+			data-image-slug="120b23ce-12dc-4d1a-9910-d478f23be48d"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="120b23ce-12dc-4d1a-9910-d478f23be48d"
+					alt="120b23ce-12dc-4d1a-9910-d478f23be48d"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_120b23ce-12dc-4d1a-9910-d478f23be48d.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-1" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/3b396e7c-b506-459b-9fe8-e878e342a57e.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/3b396e7c-b506-459b-9fe8-e878e342a57e.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_3b396e7c-b506-459b-9fe8-e878e342a57e.jpg"
+			data-image-id="6253"
+			data-image-name="3b396e7c-b506-459b-9fe8-e878e342a57e.jpg"
+			data-title="3b396e7c-b506-459b-9fe8-e878e342a57e"
+			data-description=""
+			data-image-slug="3b396e7c-b506-459b-9fe8-e878e342a57e-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="3b396e7c-b506-459b-9fe8-e878e342a57e"
+					alt="3b396e7c-b506-459b-9fe8-e878e342a57e"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_3b396e7c-b506-459b-9fe8-e878e342a57e.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-2" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/3bae8341-fe75-427d-9afa-20188dbdeaac.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/3bae8341-fe75-427d-9afa-20188dbdeaac.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_3bae8341-fe75-427d-9afa-20188dbdeaac.jpg"
+			data-image-id="6254"
+			data-image-name="3bae8341-fe75-427d-9afa-20188dbdeaac.jpg"
+			data-title="3bae8341-fe75-427d-9afa-20188dbdeaac"
+			data-description=""
+			data-image-slug="3bae8341-fe75-427d-9afa-20188dbdeaac-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="3bae8341-fe75-427d-9afa-20188dbdeaac"
+					alt="3bae8341-fe75-427d-9afa-20188dbdeaac"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_3bae8341-fe75-427d-9afa-20188dbdeaac.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-3" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0.jpg"
+			data-image-id="6255"
+			data-image-name="4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0.jpg"
+			data-title="4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0"
+			data-description=""
+			data-image-slug="4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0"
+					alt="4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_4fe79e22-65eb-4fb0-bddd-ed36e1f20cd0.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-4" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/68ca21a0-8431-4660-b815-2012d1d6074f.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/68ca21a0-8431-4660-b815-2012d1d6074f.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_68ca21a0-8431-4660-b815-2012d1d6074f.jpg"
+			data-image-id="6256"
+			data-image-name="68ca21a0-8431-4660-b815-2012d1d6074f.jpg"
+			data-title="68ca21a0-8431-4660-b815-2012d1d6074f"
+			data-description=""
+			data-image-slug="68ca21a0-8431-4660-b815-2012d1d6074f-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="68ca21a0-8431-4660-b815-2012d1d6074f"
+					alt="68ca21a0-8431-4660-b815-2012d1d6074f"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_68ca21a0-8431-4660-b815-2012d1d6074f.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-5" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/82d6d025-cb9d-4b9b-a018-abd39794719d.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/82d6d025-cb9d-4b9b-a018-abd39794719d.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_82d6d025-cb9d-4b9b-a018-abd39794719d.jpg"
+			data-image-id="6257"
+			data-image-name="82d6d025-cb9d-4b9b-a018-abd39794719d.jpg"
+			data-title="82d6d025-cb9d-4b9b-a018-abd39794719d"
+			data-description=""
+			data-image-slug="82d6d025-cb9d-4b9b-a018-abd39794719d-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="82d6d025-cb9d-4b9b-a018-abd39794719d"
+					alt="82d6d025-cb9d-4b9b-a018-abd39794719d"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_82d6d025-cb9d-4b9b-a018-abd39794719d.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-6" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/830263a2-0800-45a4-89f8-d0499324184b.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/830263a2-0800-45a4-89f8-d0499324184b.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_830263a2-0800-45a4-89f8-d0499324184b.jpg"
+			data-image-id="6258"
+			data-image-name="830263a2-0800-45a4-89f8-d0499324184b.jpg"
+			data-title="830263a2-0800-45a4-89f8-d0499324184b"
+			data-description=""
+			data-image-slug="830263a2-0800-45a4-89f8-d0499324184b"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="830263a2-0800-45a4-89f8-d0499324184b"
+					alt="830263a2-0800-45a4-89f8-d0499324184b"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_830263a2-0800-45a4-89f8-d0499324184b.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-7" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/IMG-20230323-WA0038.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/IMG-20230323-WA0038.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_IMG-20230323-WA0038.jpg"
+			data-image-id="6259"
+			data-image-name="IMG-20230323-WA0038.jpg"
+			data-title="IMG-20230323-WA0038"
+			data-description=""
+			data-image-slug="img-20230323-wa0038-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="IMG-20230323-WA0038"
+					alt="IMG-20230323-WA0038"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_IMG-20230323-WA0038.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-8" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/a84b3870-e1db-411a-812f-9940c06824fe.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/a84b3870-e1db-411a-812f-9940c06824fe.JPG"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_a84b3870-e1db-411a-812f-9940c06824fe.JPG"
+			data-image-id="6260"
+			data-image-name="a84b3870-e1db-411a-812f-9940c06824fe.JPG"
+			data-title="a84b3870-e1db-411a-812f-9940c06824fe"
+			data-description=""
+			data-image-slug="a84b3870-e1db-411a-812f-9940c06824fe-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="a84b3870-e1db-411a-812f-9940c06824fe"
+					alt="a84b3870-e1db-411a-812f-9940c06824fe"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_a84b3870-e1db-411a-812f-9940c06824fe.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-9" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/a87c99e3-5f6f-4091-8e01-a08b3d677292.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/a87c99e3-5f6f-4091-8e01-a08b3d677292.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_a87c99e3-5f6f-4091-8e01-a08b3d677292.jpg"
+			data-image-id="6261"
+			data-image-name="a87c99e3-5f6f-4091-8e01-a08b3d677292.jpg"
+			data-title="a87c99e3-5f6f-4091-8e01-a08b3d677292"
+			data-description=""
+			data-image-slug="a87c99e3-5f6f-4091-8e01-a08b3d677292"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="a87c99e3-5f6f-4091-8e01-a08b3d677292"
+					alt="a87c99e3-5f6f-4091-8e01-a08b3d677292"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_a87c99e3-5f6f-4091-8e01-a08b3d677292.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-10" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/af52b787-18c0-48ef-aff8-3a3c434afd6f.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/af52b787-18c0-48ef-aff8-3a3c434afd6f.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_af52b787-18c0-48ef-aff8-3a3c434afd6f.jpg"
+			data-image-id="6262"
+			data-image-name="af52b787-18c0-48ef-aff8-3a3c434afd6f.jpg"
+			data-title="af52b787-18c0-48ef-aff8-3a3c434afd6f"
+			data-description=""
+			data-image-slug="af52b787-18c0-48ef-aff8-3a3c434afd6f-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="af52b787-18c0-48ef-aff8-3a3c434afd6f"
+					alt="af52b787-18c0-48ef-aff8-3a3c434afd6f"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_af52b787-18c0-48ef-aff8-3a3c434afd6f.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-11" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2023-03-23-1/b497730c-b49b-4d97-a4fa-3cd798982514.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2023-03-23-1/b497730c-b49b-4d97-a4fa-3cd798982514.jpg"
+			data-thumbnail="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_b497730c-b49b-4d97-a4fa-3cd798982514.jpg"
+			data-image-id="6263"
+			data-image-name="b497730c-b49b-4d97-a4fa-3cd798982514.jpg"
+			data-title="b497730c-b49b-4d97-a4fa-3cd798982514"
+			data-description=""
+			data-image-slug="b497730c-b49b-4d97-a4fa-3cd798982514-1"
+																				class="ngg-fancybox" rel="d06bd40f692d3965df3bb67cf44ecb0f">
+								<img loading="lazy"
+					class="lazy" title="b497730c-b49b-4d97-a4fa-3cd798982514"
+					alt="b497730c-b49b-4d97-a4fa-3cd798982514"
+					src="../../../wp-content/gallery/2023-03-23-1/thumbs/thumbs_b497730c-b49b-4d97-a4fa-3cd798982514.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+	
+	<br style="clear: both" />
+
+		
+	
+		<!-- Pagination -->
+		<div class='ngg-clear'></div>	</div></div>
+ 
+</article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        &#169; Copyleft 2026 <a href="../../../index.html">dirkgeeroms.be</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/dirk.geeroms1" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com/dirkgeeroms" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dirkgeeroms" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../script.js"></script>
+</body>
+</html>

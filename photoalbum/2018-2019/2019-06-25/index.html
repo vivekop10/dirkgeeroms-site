@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2019-06-25 — dirkgeeroms.be</title>
+  <meta name="description" content="Dirk Geeroms — Flipping the classroom. Physics teacher resources, forums, videos, and more.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2019-06-25 — dirkgeeroms.be">
+  <meta property="og:url" content="https://test.dirkgeeroms.be/">
+  <meta property="og:site_name" content="dirkgeeroms.be">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../../../index.html">dirkgeeroms.be</a></h1>
+        <span class="site-tagline">Flipping the classroom</span>
+      </div>
+
+      
+      <div class="header-actions">
+        <!-- Search Button -->
+        <button id="searchToggle" class="header-action-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="header-action-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <div class="nav-item">
+          <a href="../../../contact/index.html">contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="../../../spaceheadingdeezers/index.html">Deezers</a>
+          <div class="sub-menu">
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/asgard/index.html">Asgard</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/asgard/asgard-covid/index.html">2020 Asgard-COVID</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-x/index.html">2021 Asgard-X</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-xii/index.html">2023 Asgard-XII</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/astro-pi/index.html">Astro Pi</a>
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/cansat/index.html">CanSat</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/cansat/2022-2023-cansat/index.html">2022-2023 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2023-2024-cansat/index.html">2023-2024 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2025-2026-cansat/index.html">2025-2026 Cansat</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/hemera/index.html">Hemera</a>
+            <a href="../../../spaceheadingdeezers/rmi/index.html">RMI</a>
+            <a href="../../../spaceheadingdeezers/svalbard/index.html">Svalbard</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="../../../photoalbum/index.html">gallery</a>
+        </div>
+        <div class="nav-item">
+          <a href="http://archive.dirkgeeroms.be" target="_blank" rel="noopener">archive</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div id="searchContainer" class="search-overlay" style="display: none;">
+    <div class="search-overlay-inner">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-input-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search lessons, topics, forums, etc..." autocomplete="off">
+        <button id="searchClose" class="search-close-btn">&times;</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="site-main">
+    <div class="content-area">
+      <div class="content-grid">
+        <div class="card" style="grid-column: 1 / -1;">
+          <div class="card-header">
+            <div class="card-title">
+              <nav class="breadcrumb-nav"><a href="../../../index.html">Home</a> &rsaquo; <a href="../../../photoalbum/index.html">gallery</a> &rsaquo; <a href="../../../photoalbum/2018-2019/index.html">2018-2019</a> &rsaquo; <span>2019-06-25</span></nav>
+            </div>
+          </div>
+          <div class="card-body page-content">
+            
+<nav class="crumbs"><a href="../../../index.html">Home</a> › <a href="../../../photoalbum/index.html">gallery</a> › <a href="../../../photoalbum/2018-2019/index.html">2018-2019</a> › <span>2019-06-25</span></nav>
+<article>
+ <h1>2019-06-25</h1>
+ 
+ <div class="content"><h1>Proclamatie SHD</h1>
+<!-- default-view.php -->
+<div
+	class="ngg-galleryoverview default-view
+	 ngg-ajax-pagination-none	"
+	id="ngg-gallery-92f9b894e9b0fe0ad5bb4db4d7758f9b-1"
+	data-nextgen-gallery-id="248"
+	data-gallery-id="248"
+		data-gallery-name="2019-06-25"
+	>
+
+		<!-- Thumbnails -->
+				<div id="ngg-image-0" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-184.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-184.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-184.jpg"
+			data-image-id="5325"
+			data-image-name="BTX-184.jpg"
+			data-title="BTX-184"
+			data-description=""
+			data-image-slug="btx-184"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-184"
+					alt="BTX-184"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-184.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-1" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-185.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-185.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-185.jpg"
+			data-image-id="5326"
+			data-image-name="BTX-185.jpg"
+			data-title="BTX-185"
+			data-description=""
+			data-image-slug="btx-185"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-185"
+					alt="BTX-185"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-185.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-2" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-187.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-187.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-187.jpg"
+			data-image-id="5327"
+			data-image-name="BTX-187.jpg"
+			data-title="BTX-187"
+			data-description=""
+			data-image-slug="btx-187"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-187"
+					alt="BTX-187"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-187.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-3" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-188.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-188.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-188.jpg"
+			data-image-id="5328"
+			data-image-name="BTX-188.jpg"
+			data-title="BTX-188"
+			data-description=""
+			data-image-slug="btx-188"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-188"
+					alt="BTX-188"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-188.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-4" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-189.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-189.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-189.jpg"
+			data-image-id="5329"
+			data-image-name="BTX-189.jpg"
+			data-title="BTX-189"
+			data-description=""
+			data-image-slug="btx-189"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-189"
+					alt="BTX-189"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-189.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-5" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-190.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-190.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-190.jpg"
+			data-image-id="5330"
+			data-image-name="BTX-190.jpg"
+			data-title="BTX-190"
+			data-description=""
+			data-image-slug="btx-190"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-190"
+					alt="BTX-190"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-190.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-6" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-191.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-191.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-191.jpg"
+			data-image-id="5331"
+			data-image-name="BTX-191.jpg"
+			data-title="BTX-191"
+			data-description=""
+			data-image-slug="btx-191"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-191"
+					alt="BTX-191"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-191.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-7" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-192.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-192.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-192.jpg"
+			data-image-id="5332"
+			data-image-name="BTX-192.jpg"
+			data-title="BTX-192"
+			data-description=""
+			data-image-slug="btx-192"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-192"
+					alt="BTX-192"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-192.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-8" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-193.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-193.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-193.jpg"
+			data-image-id="5333"
+			data-image-name="BTX-193.jpg"
+			data-title="BTX-193"
+			data-description=""
+			data-image-slug="btx-193"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-193"
+					alt="BTX-193"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-193.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-9" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../assets/wp-content/gallery/2018-2019/2019-06-25/BTX-194.jpg"
+			title=""
+			data-src="../../../assets/wp-content/gallery/2018-2019/2019-06-25/BTX-194.jpg"
+			data-thumbnail="../../../assets/wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-194.jpg"
+			data-image-id="5334"
+			data-image-name="BTX-194.jpg"
+			data-title="BTX-194"
+			data-description=""
+			data-image-slug="btx-194"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-194"
+					alt="BTX-194"
+					src="../../../assets/wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-194.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-10" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-195.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-195.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-195.jpg"
+			data-image-id="5335"
+			data-image-name="BTX-195.jpg"
+			data-title="BTX-195"
+			data-description=""
+			data-image-slug="btx-195"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-195"
+					alt="BTX-195"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-195.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-11" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-196.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-196.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-196.jpg"
+			data-image-id="5336"
+			data-image-name="BTX-196.jpg"
+			data-title="BTX-196"
+			data-description=""
+			data-image-slug="btx-196"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-196"
+					alt="BTX-196"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-196.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-12" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-197.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-197.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-197.jpg"
+			data-image-id="5337"
+			data-image-name="BTX-197.jpg"
+			data-title="BTX-197"
+			data-description=""
+			data-image-slug="btx-197"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-197"
+					alt="BTX-197"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-197.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-13" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-198.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-198.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-198.jpg"
+			data-image-id="5338"
+			data-image-name="BTX-198.jpg"
+			data-title="BTX-198"
+			data-description=""
+			data-image-slug="btx-198"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-198"
+					alt="BTX-198"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-198.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-14" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-199.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-199.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-199.jpg"
+			data-image-id="5339"
+			data-image-name="BTX-199.jpg"
+			data-title="BTX-199"
+			data-description=""
+			data-image-slug="btx-199"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-199"
+					alt="BTX-199"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-199.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-15" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-200.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-200.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-200.jpg"
+			data-image-id="5340"
+			data-image-name="BTX-200.jpg"
+			data-title="BTX-200"
+			data-description=""
+			data-image-slug="btx-200"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-200"
+					alt="BTX-200"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-200.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-16" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-201.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-201.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-201.jpg"
+			data-image-id="5341"
+			data-image-name="BTX-201.jpg"
+			data-title="BTX-201"
+			data-description=""
+			data-image-slug="btx-201"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-201"
+					alt="BTX-201"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-201.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-17" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-202.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-202.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-202.jpg"
+			data-image-id="5342"
+			data-image-name="BTX-202.jpg"
+			data-title="BTX-202"
+			data-description=""
+			data-image-slug="btx-202"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-202"
+					alt="BTX-202"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-202.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-18" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-203.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-203.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-203.jpg"
+			data-image-id="5343"
+			data-image-name="BTX-203.jpg"
+			data-title="BTX-203"
+			data-description=""
+			data-image-slug="btx-203"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-203"
+					alt="BTX-203"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-203.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-19" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-204.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2019-06-25/BTX-204.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-204.jpg"
+			data-image-id="5344"
+			data-image-name="BTX-204.jpg"
+			data-title="BTX-204"
+			data-description=""
+			data-image-slug="btx-204"
+																				class="ngg-fancybox" rel="92f9b894e9b0fe0ad5bb4db4d7758f9b">
+								<img loading="lazy"
+					class="lazy" title="BTX-204"
+					alt="BTX-204"
+					src="../../../wp-content/gallery/2018-2019/2019-06-25/thumbs/thumbs_BTX-204.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+	
+	<br style="clear: both" />
+
+		
+	
+		<!-- Pagination -->
+		<div class='ngg-navigation'><span class='current'>1</span>
+<a class='page-numbers' data-pageid='2' href='https://test.dirkgeeroms.be/photoalbum/2018-2019/2019-06-25/gallery/page/2'>2</a>
+<span class='ellipsis'>...</span>
+<a class='page-numbers' data-pageid='4' href='https://test.dirkgeeroms.be/photoalbum/2018-2019/2019-06-25/gallery/page/4'>4</a>
+<a class='prev' href='https://test.dirkgeeroms.be/photoalbum/2018-2019/2019-06-25/gallery/page/2' data-pageid="2">&#9658;</a></div>	</div></div>
+ 
+</article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        &#169; Copyleft 2026 <a href="../../../index.html">dirkgeeroms.be</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/dirk.geeroms1" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com/dirkgeeroms" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dirkgeeroms" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../script.js"></script>
+</body>
+</html>

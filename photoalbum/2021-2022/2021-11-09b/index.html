@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2021-11-09b — dirkgeeroms.be</title>
+  <meta name="description" content="Dirk Geeroms — Flipping the classroom. Physics teacher resources, forums, videos, and more.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2021-11-09b — dirkgeeroms.be">
+  <meta property="og:url" content="https://test.dirkgeeroms.be/">
+  <meta property="og:site_name" content="dirkgeeroms.be">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../../../index.html">dirkgeeroms.be</a></h1>
+        <span class="site-tagline">Flipping the classroom</span>
+      </div>
+
+      
+      <div class="header-actions">
+        <!-- Search Button -->
+        <button id="searchToggle" class="header-action-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="header-action-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <div class="nav-item">
+          <a href="../../../contact/index.html">contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="../../../spaceheadingdeezers/index.html">Deezers</a>
+          <div class="sub-menu">
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/asgard/index.html">Asgard</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/asgard/asgard-covid/index.html">2020 Asgard-COVID</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-x/index.html">2021 Asgard-X</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-xii/index.html">2023 Asgard-XII</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/astro-pi/index.html">Astro Pi</a>
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/cansat/index.html">CanSat</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/cansat/2022-2023-cansat/index.html">2022-2023 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2023-2024-cansat/index.html">2023-2024 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2025-2026-cansat/index.html">2025-2026 Cansat</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/hemera/index.html">Hemera</a>
+            <a href="../../../spaceheadingdeezers/rmi/index.html">RMI</a>
+            <a href="../../../spaceheadingdeezers/svalbard/index.html">Svalbard</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="../../../photoalbum/index.html">gallery</a>
+        </div>
+        <div class="nav-item">
+          <a href="http://archive.dirkgeeroms.be" target="_blank" rel="noopener">archive</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div id="searchContainer" class="search-overlay" style="display: none;">
+    <div class="search-overlay-inner">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-input-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search lessons, topics, forums, etc..." autocomplete="off">
+        <button id="searchClose" class="search-close-btn">&times;</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="site-main">
+    <div class="content-area">
+      <div class="content-grid">
+        <div class="card" style="grid-column: 1 / -1;">
+          <div class="card-header">
+            <div class="card-title">
+              <nav class="breadcrumb-nav"><a href="../../../index.html">Home</a> &rsaquo; <a href="../../../photoalbum/index.html">gallery</a> &rsaquo; <a href="../../../photoalbum/2021-2022/index.html">2021-2022</a> &rsaquo; <span>2021-11-09b</span></nav>
+            </div>
+          </div>
+          <div class="card-body page-content">
+            
+<nav class="crumbs"><a href="../../../index.html">Home</a> › <a href="../../../photoalbum/index.html">gallery</a> › <a href="../../../photoalbum/2021-2022/index.html">2021-2022</a> › <span>2021-11-09b</span></nav>
+<article>
+ <h1>2021-11-09b</h1>
+ 
+ <div class="content"><h1>Controletoets over basisgebruik oscilloscoop in klasgroep 6E</h1>
+<!-- default-view.php -->
+<div
+	class="ngg-galleryoverview default-view
+	 ngg-ajax-pagination-none	"
+	id="ngg-gallery-71e7af1d2306cc558933200d867d0f41-1"
+	data-nextgen-gallery-id="285"
+	data-gallery-id="285"
+		data-gallery-name="2021-11-09b"
+	>
+
+		<!-- Thumbnails -->
+				<div id="ngg-image-0" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5403.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5403.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5403.JPG"
+			data-image-id="6099"
+			data-image-name="IMG_5403.JPG"
+			data-title="IMG_5403"
+			data-description=""
+			data-image-slug="img_5403"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5403"
+					alt="IMG_5403"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5403.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-1" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5404.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5404.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5404.JPG"
+			data-image-id="6100"
+			data-image-name="IMG_5404.JPG"
+			data-title="IMG_5404"
+			data-description=""
+			data-image-slug="img_5404"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5404"
+					alt="IMG_5404"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5404.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-2" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5405.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5405.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5405.JPG"
+			data-image-id="6101"
+			data-image-name="IMG_5405.JPG"
+			data-title="IMG_5405"
+			data-description=""
+			data-image-slug="img_5405"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5405"
+					alt="IMG_5405"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5405.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-3" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5406.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5406.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5406.JPG"
+			data-image-id="6102"
+			data-image-name="IMG_5406.JPG"
+			data-title="IMG_5406"
+			data-description=""
+			data-image-slug="img_5406"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5406"
+					alt="IMG_5406"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5406.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-4" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5407.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5407.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5407.JPG"
+			data-image-id="6103"
+			data-image-name="IMG_5407.JPG"
+			data-title="IMG_5407"
+			data-description=""
+			data-image-slug="img_5407"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5407"
+					alt="IMG_5407"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5407.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-5" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5408.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5408.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5408.JPG"
+			data-image-id="6104"
+			data-image-name="IMG_5408.JPG"
+			data-title="IMG_5408"
+			data-description=""
+			data-image-slug="img_5408"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5408"
+					alt="IMG_5408"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5408.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-6" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5409.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5409.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5409.JPG"
+			data-image-id="6105"
+			data-image-name="IMG_5409.JPG"
+			data-title="IMG_5409"
+			data-description=""
+			data-image-slug="img_5409"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5409"
+					alt="IMG_5409"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5409.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-7" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5410.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5410.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5410.JPG"
+			data-image-id="6106"
+			data-image-name="IMG_5410.JPG"
+			data-title="IMG_5410"
+			data-description=""
+			data-image-slug="img_5410"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5410"
+					alt="IMG_5410"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5410.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-8" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5411.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5411.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5411.JPG"
+			data-image-id="6107"
+			data-image-name="IMG_5411.JPG"
+			data-title="IMG_5411"
+			data-description=""
+			data-image-slug="img_5411"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5411"
+					alt="IMG_5411"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5411.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-9" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5412.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5412.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5412.JPG"
+			data-image-id="6108"
+			data-image-name="IMG_5412.JPG"
+			data-title="IMG_5412"
+			data-description=""
+			data-image-slug="img_5412"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5412"
+					alt="IMG_5412"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5412.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-10" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5413.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5413.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5413.JPG"
+			data-image-id="6109"
+			data-image-name="IMG_5413.JPG"
+			data-title="IMG_5413"
+			data-description=""
+			data-image-slug="img_5413"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5413"
+					alt="IMG_5413"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5413.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-11" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5414.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5414.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5414.JPG"
+			data-image-id="6110"
+			data-image-name="IMG_5414.JPG"
+			data-title="IMG_5414"
+			data-description=""
+			data-image-slug="img_5414"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5414"
+					alt="IMG_5414"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5414.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-12" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5415.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5415.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5415.JPG"
+			data-image-id="6111"
+			data-image-name="IMG_5415.JPG"
+			data-title="IMG_5415"
+			data-description=""
+			data-image-slug="img_5415"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5415"
+					alt="IMG_5415"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5415.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-13" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5416.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5416.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5416.JPG"
+			data-image-id="6112"
+			data-image-name="IMG_5416.JPG"
+			data-title="IMG_5416"
+			data-description=""
+			data-image-slug="img_5416"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5416"
+					alt="IMG_5416"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5416.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-14" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5417.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5417.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5417.JPG"
+			data-image-id="6113"
+			data-image-name="IMG_5417.JPG"
+			data-title="IMG_5417"
+			data-description=""
+			data-image-slug="img_5417"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5417"
+					alt="IMG_5417"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5417.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-15" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5418.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2021-2022/2021-11-09b/IMG_5418.JPG"
+			data-thumbnail="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5418.JPG"
+			data-image-id="6114"
+			data-image-name="IMG_5418.JPG"
+			data-title="IMG_5418"
+			data-description=""
+			data-image-slug="img_5418"
+																				class="ngg-fancybox" rel="71e7af1d2306cc558933200d867d0f41">
+								<img loading="lazy"
+					class="lazy" title="IMG_5418"
+					alt="IMG_5418"
+					src="../../../wp-content/gallery/2021-2022/2021-11-09b/thumbs/thumbs_IMG_5418.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+	
+	<br style="clear: both" />
+
+		
+	
+		<!-- Pagination -->
+		<div class='ngg-clear'></div>	</div></div>
+ 
+</article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        &#169; Copyleft 2026 <a href="../../../index.html">dirkgeeroms.be</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/dirk.geeroms1" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com/dirkgeeroms" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dirkgeeroms" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../script.js"></script>
+</body>
+</html>

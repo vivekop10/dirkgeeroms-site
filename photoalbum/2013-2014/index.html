@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2013-2014 — dirkgeeroms.be</title>
+  <meta name="description" content="Dirk Geeroms — Flipping the classroom. Physics teacher resources, forums, videos, and more.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2013-2014 — dirkgeeroms.be">
+  <meta property="og:url" content="https://test.dirkgeeroms.be/">
+  <meta property="og:site_name" content="dirkgeeroms.be">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../../index.html">dirkgeeroms.be</a></h1>
+        <span class="site-tagline">Flipping the classroom</span>
+      </div>
+
+      
+      <div class="header-actions">
+        <!-- Search Button -->
+        <button id="searchToggle" class="header-action-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="header-action-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <div class="nav-item">
+          <a href="../../contact/index.html">contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="../../spaceheadingdeezers/index.html">Deezers</a>
+          <div class="sub-menu">
+            <div class="nav-item">
+              <a href="../../spaceheadingdeezers/asgard/index.html">Asgard</a>
+              <div class="sub-menu">
+                <a href="../../spaceheadingdeezers/asgard/asgard-covid/index.html">2020 Asgard-COVID</a>
+                <a href="../../spaceheadingdeezers/asgard/asgard-x/index.html">2021 Asgard-X</a>
+                <a href="../../spaceheadingdeezers/asgard/asgard-xii/index.html">2023 Asgard-XII</a>
+              </div>
+            </div>
+            <a href="../../spaceheadingdeezers/astro-pi/index.html">Astro Pi</a>
+            <div class="nav-item">
+              <a href="../../spaceheadingdeezers/cansat/index.html">CanSat</a>
+              <div class="sub-menu">
+                <a href="../../spaceheadingdeezers/cansat/2022-2023-cansat/index.html">2022-2023 Cansat</a>
+                <a href="../../spaceheadingdeezers/cansat/2023-2024-cansat/index.html">2023-2024 Cansat</a>
+                <a href="../../spaceheadingdeezers/cansat/2025-2026-cansat/index.html">2025-2026 Cansat</a>
+              </div>
+            </div>
+            <a href="../../spaceheadingdeezers/hemera/index.html">Hemera</a>
+            <a href="../../spaceheadingdeezers/rmi/index.html">RMI</a>
+            <a href="../../spaceheadingdeezers/svalbard/index.html">Svalbard</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="../../photoalbum/index.html">gallery</a>
+        </div>
+        <div class="nav-item">
+          <a href="http://archive.dirkgeeroms.be" target="_blank" rel="noopener">archive</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div id="searchContainer" class="search-overlay" style="display: none;">
+    <div class="search-overlay-inner">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-input-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search lessons, topics, forums, etc..." autocomplete="off">
+        <button id="searchClose" class="search-close-btn">&times;</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="site-main">
+    <div class="content-area">
+      <div class="content-grid">
+        <div class="card" style="grid-column: 1 / -1;">
+          <div class="card-header">
+            <div class="card-title">
+              <nav class="breadcrumb-nav"><a href="../../index.html">Home</a> &rsaquo; <a href="../../photoalbum/index.html">gallery</a> &rsaquo; <span>2013-2014</span></nav>
+            </div>
+          </div>
+          <div class="card-body page-content">
+            
+<nav class="crumbs"><a href="../../index.html">Home</a> › <a href="../../photoalbum/index.html">gallery</a> › <span>2013-2014</span></nav>
+<article>
+ <h1>2013-2014</h1>
+ 
+ <div class="content"><p>	<div class="ngg-albumoverview default-view">
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2013-10-22/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2013-10-22"
+									src="https://test.dirkgeeroms.be/nextgen-image/5601/91x68/crop/c912ae1a427890ba4f1c6b4886fe8f95?t=1605111933"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2013-10-22/index.html'>2013-10-22</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						Rocket Science met Seppe Canonaco van Cosmodrome Genk						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>138</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2013-11-26/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2013-11-26"
+									src="../../assets/wp-content/gallery/2013-2014/2013-11-26/cache/20131126_113523.jpg-nggid03162-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2013-11-26/index.html'>2013-11-26</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						fusieshow aan de UAntwerpen						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>8</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-01-14/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-01-14"
+									src="../../assets/wp-content/gallery/2013-2014/2014-01-14/cache/20140114_163329.jpg-nggid03168-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-01-14/index.html'>2014-01-14</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						Klasgroep 5E3 tekent ellips op speelplaats.						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>11</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-01-17/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-01-17"
+									src="../../assets/wp-content/gallery/2013-2014/2014-01-17/cache/20140117_113900.jpg-nggid03278-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-01-17/index.html'>2014-01-17</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						finale Zero Robotics in ESTEC, Noordwijk, Nederland &amp; SHD Chrysostomos 2014						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>41</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-01-22/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-01-22"
+									src="../../assets/wp-content/gallery/2013-2014/2014-01-22/cache/20140122_131020.jpg-nggid03302-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-01-22/index.html'>2014-01-22</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						eerste ronde Vlaamse Fysica Olympiade						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>2</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-12/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-03-12"
+									src="../../assets/wp-content/gallery/2013-2014/2014-03-12/cache/20140312_125821.jpg-nggid03112-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-12/index.html'>2014-03-12</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						finale Vlaamse Technologie Olympiade						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>6</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-19/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-03-19"
+									src="../../assets/wp-content/gallery/2013-2014/2014-03-19/cache/20140319_083445.jpg-nggid03305-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-19/index.html'>2014-03-19</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						Asgard-IV: PCB klaar voor verzending						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>2</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-26/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-03-26"
+									src="../../assets/wp-content/gallery/2013-2014/2014-03-26/cache/20140326_145013.jpg-nggid03307-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-26/index.html'>2014-03-26</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						Asgard-IV in planetarium Brussel						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>2</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-27/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-03-27"
+									src="../../assets/wp-content/gallery/2013-2014/2014-03-27/cache/DSC07324.JPG-nggid03844-ngg0dyn-91x68-00f0w010c011r110f110r010t010.JPG"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-03-27/index.html'>2014-03-27</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						Asgard-IV op plateau van Ukkel						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>95</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-05-23/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-05-23"
+									src="../../assets/wp-content/gallery/2013-2014/2014-05-23/cache/20140523_141925.jpg-nggid03341-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-05-23/index.html'>2014-05-23</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						sportdag SHD: met inline skates naar Maaseik						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>4</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-06-04/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-06-04"
+									src="../../assets/wp-content/gallery/2013-2014/2014-06-04/cache/1480863_10203504839679413_171927301_o.jpg-nggid03586-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-06-04/index.html'>2014-06-04</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						afscheid van klasgroepen 6E2 &amp; 6E3						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>2</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+					<div class="ngg-album">
+				<div class="ngg-albumcontent">
+											<div class="ngg-thumbnail">
+							<a class='gallery_link' href='../../photoalbum/2013-2014/2014-06-25/index.html'>
+								<img loading="lazy" class="Thumb"
+									alt="2014-06-25"
+									src="../../assets/wp-content/gallery/2013-2014/2014-06-25/cache/20140625_122658.jpg-nggid03343-ngg0dyn-91x68-00f0w010c011r110f110r010t010.jpg"/>
+							</a>
+						</div>
+										<div class="ngg-albumtitle">
+						<a class='gallery_link' href='../../photoalbum/2013-2014/2014-06-25/index.html'>2014-06-25</a>
+					</div>
+					<div class="ngg-description">
+						<p>
+						nieuw promo spandoek aan façade SHD						</p>
+													<p class="ngg-album-gallery-image-counter">
+								<strong>1</strong>&nbsp;Photos</p>
+											</div>
+				</div>
+			</div>
+				<div class='ngg-clear'></div>	</div>
+</p>
+</div>
+ <h2>In dit onderdeel</h2><ul class="cards"><li><a href="../../photoalbum/2013-2014/2013-10-22/index.html">2013-10-22</a></li><li><a href="../../photoalbum/2013-2014/2013-11-26/index.html">2013-11-26</a></li><li><a href="../../photoalbum/2013-2014/2014-01-14/index.html">2014-01-14</a></li><li><a href="../../photoalbum/2013-2014/2014-01-17/index.html">2014-01-17</a></li><li><a href="../../photoalbum/2013-2014/2014-01-22/index.html">2014-01-22</a></li><li><a href="../../photoalbum/2013-2014/2014-03-12/index.html">2014-03-12</a></li><li><a href="../../photoalbum/2013-2014/2014-03-19/index.html">2014-03-19</a></li><li><a href="../../photoalbum/2013-2014/2014-03-26/index.html">2014-03-26</a></li><li><a href="../../photoalbum/2013-2014/2014-03-27/index.html">2014-03-27</a></li><li><a href="../../photoalbum/2013-2014/2014-05-23/index.html">2014-05-23</a></li><li><a href="../../photoalbum/2013-2014/2014-06-04/index.html">2014-06-04</a></li><li><a href="../../photoalbum/2013-2014/2014-06-25/index.html">2014-06-25</a></li></ul>
+</article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        &#169; Copyleft 2026 <a href="../../index.html">dirkgeeroms.be</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/dirk.geeroms1" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com/dirkgeeroms" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dirkgeeroms" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2018-09-30-part-3 — dirkgeeroms.be</title>
+  <meta name="description" content="Dirk Geeroms — Flipping the classroom. Physics teacher resources, forums, videos, and more.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2018-09-30-part-3 — dirkgeeroms.be">
+  <meta property="og:url" content="https://test.dirkgeeroms.be/">
+  <meta property="og:site_name" content="dirkgeeroms.be">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-brand">
+        <h1 class="site-title"><a href="../../../index.html">dirkgeeroms.be</a></h1>
+        <span class="site-tagline">Flipping the classroom</span>
+      </div>
+
+      
+      <div class="header-actions">
+        <!-- Search Button -->
+        <button id="searchToggle" class="header-action-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-search"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="header-action-btn" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav">
+        <div class="nav-item">
+          <a href="../../../contact/index.html">contact</a>
+        </div>
+        <div class="nav-item">
+          <a href="../../../spaceheadingdeezers/index.html">Deezers</a>
+          <div class="sub-menu">
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/asgard/index.html">Asgard</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/asgard/asgard-covid/index.html">2020 Asgard-COVID</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-x/index.html">2021 Asgard-X</a>
+                <a href="../../../spaceheadingdeezers/asgard/asgard-xii/index.html">2023 Asgard-XII</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/astro-pi/index.html">Astro Pi</a>
+            <div class="nav-item">
+              <a href="../../../spaceheadingdeezers/cansat/index.html">CanSat</a>
+              <div class="sub-menu">
+                <a href="../../../spaceheadingdeezers/cansat/2022-2023-cansat/index.html">2022-2023 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2023-2024-cansat/index.html">2023-2024 Cansat</a>
+                <a href="../../../spaceheadingdeezers/cansat/2025-2026-cansat/index.html">2025-2026 Cansat</a>
+              </div>
+            </div>
+            <a href="../../../spaceheadingdeezers/hemera/index.html">Hemera</a>
+            <a href="../../../spaceheadingdeezers/rmi/index.html">RMI</a>
+            <a href="../../../spaceheadingdeezers/svalbard/index.html">Svalbard</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="../../../photoalbum/index.html">gallery</a>
+        </div>
+        <div class="nav-item">
+          <a href="http://archive.dirkgeeroms.be" target="_blank" rel="noopener">archive</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div id="searchContainer" class="search-overlay" style="display: none;">
+    <div class="search-overlay-inner">
+      <div class="search-input-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-input-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search lessons, topics, forums, etc..." autocomplete="off">
+        <button id="searchClose" class="search-close-btn">&times;</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
+
+  <main class="site-main">
+    <div class="content-area">
+      <div class="content-grid">
+        <div class="card" style="grid-column: 1 / -1;">
+          <div class="card-header">
+            <div class="card-title">
+              <nav class="breadcrumb-nav"><a href="../../../index.html">Home</a> &rsaquo; <a href="../../../photoalbum/index.html">gallery</a> &rsaquo; <a href="../../../photoalbum/2018-2019/index.html">2018-2019</a> &rsaquo; <span>2018-09-30-part-3</span></nav>
+            </div>
+          </div>
+          <div class="card-body page-content">
+            
+<nav class="crumbs"><a href="../../../index.html">Home</a> › <a href="../../../photoalbum/index.html">gallery</a> › <a href="../../../photoalbum/2018-2019/index.html">2018-2019</a> › <span>2018-09-30-part-3</span></nav>
+<article>
+ <h1>2018-09-30-part-3</h1>
+ 
+ <div class="content"><h1>Opendeurdag KMI deel 3 &#8211; tracking &amp; landing bij golfclub Hasselt</h1>
+<!-- default-view.php -->
+<div
+	class="ngg-galleryoverview default-view
+	 ngg-ajax-pagination-none	"
+	id="ngg-gallery-0c82a5f1af6d10a817c2fcb3cb5e6020-1"
+	data-nextgen-gallery-id="221"
+	data-gallery-id="221"
+		data-gallery-name="2018-09-30-part-3"
+	>
+
+		<!-- Thumbnails -->
+				<div id="ngg-image-0" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_173255.jpg"
+			title="dav"
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_173255.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_173255.jpg"
+			data-image-id="4175"
+			data-image-name="IMG_20180930_173255.jpg"
+			data-title="dav"
+			data-description="dav"
+			data-image-slug="img_20180930_173255"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="dav"
+					alt="dav"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_173255.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-1" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_174221.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_174221.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_174221.jpg"
+			data-image-id="4167"
+			data-image-name="20180930_174221.jpg"
+			data-title="20180930_174221"
+			data-description=""
+			data-image-slug="20180930_174221"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="20180930_174221"
+					alt="20180930_174221"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_174221.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-2" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_174225.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_174225.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_174225.jpg"
+			data-image-id="4168"
+			data-image-name="20180930_174225.jpg"
+			data-title="20180930_174225"
+			data-description=""
+			data-image-slug="20180930_174225"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="20180930_174225"
+					alt="20180930_174225"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_174225.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-3" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG-20180930-WA0003.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG-20180930-WA0003.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG-20180930-WA0003.jpg"
+			data-image-id="4174"
+			data-image-name="IMG-20180930-WA0003.jpg"
+			data-title="IMG-20180930-WA0003"
+			data-description=""
+			data-image-slug="img-20180930-wa0003"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG-20180930-WA0003"
+					alt="IMG-20180930-WA0003"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG-20180930-WA0003.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-4" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_182603.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_182603.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_182603.jpg"
+			data-image-id="4176"
+			data-image-name="IMG_20180930_182603.jpg"
+			data-title="IMG_20180930_182603"
+			data-description=""
+			data-image-slug="img_20180930_182603"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_20180930_182603"
+					alt="IMG_20180930_182603"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_182603.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-5" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_182739.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_182739.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_182739.jpg"
+			data-image-id="4177"
+			data-image-name="IMG_20180930_182739.jpg"
+			data-title="IMG_20180930_182739"
+			data-description=""
+			data-image-slug="img_20180930_182739"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_20180930_182739"
+					alt="IMG_20180930_182739"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_182739.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-6" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_182749.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_182749.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_182749.jpg"
+			data-image-id="4178"
+			data-image-name="IMG_20180930_182749.jpg"
+			data-title="IMG_20180930_182749"
+			data-description=""
+			data-image-slug="img_20180930_182749"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_20180930_182749"
+					alt="IMG_20180930_182749"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_182749.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-7" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8859.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8859.JPG"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8859.JPG"
+			data-image-id="4203"
+			data-image-name="IMG_8859.JPG"
+			data-title="IMG_8859"
+			data-description=""
+			data-image-slug="img_8859"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_8859"
+					alt="IMG_8859"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8859.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-8" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8860.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8860.JPG"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8860.JPG"
+			data-image-id="4204"
+			data-image-name="IMG_8860.JPG"
+			data-title="IMG_8860"
+			data-description=""
+			data-image-slug="img_8860"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_8860"
+					alt="IMG_8860"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8860.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-9" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_192441.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_192441.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_192441.jpg"
+			data-image-id="4179"
+			data-image-name="IMG_20180930_192441.jpg"
+			data-title="IMG_20180930_192441"
+			data-description=""
+			data-image-slug="img_20180930_192441"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_20180930_192441"
+					alt="IMG_20180930_192441"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_192441.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-10" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_192453.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_192453.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_192453.jpg"
+			data-image-id="4180"
+			data-image-name="IMG_20180930_192453.jpg"
+			data-title="IMG_20180930_192453"
+			data-description=""
+			data-image-slug="img_20180930_192453"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_20180930_192453"
+					alt="IMG_20180930_192453"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_192453.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-11" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_192507.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_192507.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_192507.jpg"
+			data-image-id="4181"
+			data-image-name="IMG_20180930_192507.jpg"
+			data-title="IMG_20180930_192507"
+			data-description=""
+			data-image-slug="img_20180930_192507"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_20180930_192507"
+					alt="IMG_20180930_192507"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_192507.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-12" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_202810.jpg"
+			title="dav"
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_20180930_202810.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_202810.jpg"
+			data-image-id="4182"
+			data-image-name="IMG_20180930_202810.jpg"
+			data-title="dav"
+			data-description="dav"
+			data-image-slug="img_20180930_202810"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="dav"
+					alt="dav"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_20180930_202810.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-13" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_202842.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_202842.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_202842.jpg"
+			data-image-id="4169"
+			data-image-name="20180930_202842.jpg"
+			data-title="20180930_202842"
+			data-description=""
+			data-image-slug="20180930_202842"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="20180930_202842"
+					alt="20180930_202842"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_202842.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-14" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8867.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8867.JPG"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8867.JPG"
+			data-image-id="4205"
+			data-image-name="IMG_8867.JPG"
+			data-title="IMG_8867"
+			data-description=""
+			data-image-slug="img_8867"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_8867"
+					alt="IMG_8867"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8867.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-15" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_4087.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_4087.JPG"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_4087.JPG"
+			data-image-id="4196"
+			data-image-name="IMG_4087.JPG"
+			data-title="IMG_4087"
+			data-description=""
+			data-image-slug="img_4087-1"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_4087"
+					alt="IMG_4087"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_4087.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-16" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_202846.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_202846.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_202846.jpg"
+			data-image-id="4170"
+			data-image-name="20180930_202846.jpg"
+			data-title="20180930_202846"
+			data-description=""
+			data-image-slug="20180930_202846"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="20180930_202846"
+					alt="20180930_202846"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_202846.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-17" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8868.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8868.JPG"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8868.JPG"
+			data-image-id="4206"
+			data-image-name="IMG_8868.JPG"
+			data-title="IMG_8868"
+			data-description=""
+			data-image-slug="img_8868"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_8868"
+					alt="IMG_8868"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8868.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-18" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_202851.jpg"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/20180930_202851.jpg"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_202851.jpg"
+			data-image-id="4171"
+			data-image-name="20180930_202851.jpg"
+			data-title="20180930_202851"
+			data-description=""
+			data-image-slug="20180930_202851"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="20180930_202851"
+					alt="20180930_202851"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_20180930_202851.jpg"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+				<div id="ngg-image-19" class="ngg-gallery-thumbnail-box
+											"
+			>
+						<div class="ngg-gallery-thumbnail">
+		<a href="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8869.JPG"
+			title=""
+			data-src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/IMG_8869.JPG"
+			data-thumbnail="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8869.JPG"
+			data-image-id="4207"
+			data-image-name="IMG_8869.JPG"
+			data-title="IMG_8869"
+			data-description=""
+			data-image-slug="img_8869"
+																				class="ngg-fancybox" rel="0c82a5f1af6d10a817c2fcb3cb5e6020">
+								<img loading="lazy"
+					class="lazy" title="IMG_8869"
+					alt="IMG_8869"
+					src="../../../wp-content/gallery/2018-2019/2018-09-30-part-3/thumbs/thumbs_IMG_8869.JPG"
+					width="120"
+					height="90"
+					style="max-width:100%;"
+				/>
+			</a>
+		</div>
+							</div>
+			
+	
+	<br style="clear: both" />
+
+		
+	
+		<!-- Pagination -->
+		<div class='ngg-navigation'><span class='current'>1</span>
+<a class='page-numbers' data-pageid='2' href='https://test.dirkgeeroms.be/photoalbum/2018-2019/2018-09-30-part-3/gallery/page/2'>2</a>
+<a class='page-numbers' data-pageid='3' href='https://test.dirkgeeroms.be/photoalbum/2018-2019/2018-09-30-part-3/gallery/page/3'>3</a>
+<a class='prev' href='https://test.dirkgeeroms.be/photoalbum/2018-2019/2018-09-30-part-3/gallery/page/2' data-pageid="2">&#9658;</a></div>	</div></div>
+ 
+</article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        &#169; Copyleft 2026 <a href="../../../index.html">dirkgeeroms.be</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.facebook.com/dirk.geeroms1" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://twitter.com/dirkgeeroms" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dirkgeeroms" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../script.js"></script>
+</body>
+</html>
