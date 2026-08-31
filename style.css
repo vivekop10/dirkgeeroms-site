@@ -669,7 +669,7 @@ img {
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .sidebar-card {
@@ -677,73 +677,101 @@ img {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.sidebar-card:hover {
+  border-color: rgba(65, 166, 42, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
 .sidebar-title {
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text);
-  padding: 1rem 1.25rem 0.75rem;
-  border-bottom: 1px solid var(--border-light);
+  padding: 0.85rem 1.15rem;
+  background: linear-gradient(to right, var(--green-light), transparent);
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
 }
 
 .sidebar-title svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   color: var(--green);
+  flex-shrink: 0;
 }
 
-/* --- Sidebar Navigation --- */
+/* --- Sidebar Navigation & Accordion --- */
 .sidebar-nav {
-  padding: 0.5rem 0;
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
 .sidebar-nav-item > a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
   font-weight: 500;
+  border-radius: var(--radius-sm);
   transition: all var(--transition);
+  text-decoration: none;
 }
 
 .sidebar-nav-item > a:hover {
   color: var(--green);
   background: var(--green-light);
+  transform: translateX(3px);
+}
+
+.sidebar-nav-item.open > a {
+  color: var(--green-dark);
+  font-weight: 600;
+  background: var(--green-light);
 }
 
 .sidebar-nav-item > a .chevron {
-  width: 16px;
-  height: 16px;
-  transition: transform var(--transition);
+  width: 15px;
+  height: 15px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--text-muted);
   flex-shrink: 0;
 }
 
 .sidebar-nav-item.open > a .chevron {
   transform: rotate(90deg);
+  color: var(--green);
 }
 
 .sidebar-nav-item > a.external::after {
   content: '↗';
-  font-size: 0.7rem;
-  margin-left: 0.3rem;
-  color: var(--text-muted);
+  font-size: 0.72rem;
+  margin-left: 0.35rem;
+  color: var(--green);
 }
 
+/* Nested submenus */
 .sidebar-sub {
   display: none;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--border-light);
-  margin-left: 1.25rem;
+  padding: 0.3rem 0 0.3rem 0.75rem;
+  margin: 0.2rem 0 0.3rem 0.85rem;
+  border-left: 2px solid var(--green);
+  animation: fadeInSub 0.2s ease-out;
+}
+
+@keyframes fadeInSub {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .sidebar-nav-item.open > .sidebar-sub {
@@ -752,18 +780,43 @@ img {
 
 .sidebar-sub a {
   display: block;
-  padding: 0.35rem 0.75rem;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  border-radius: 4px;
   transition: all var(--transition);
+  text-decoration: none;
 }
 
 .sidebar-sub a:hover {
   color: var(--green);
+  background: var(--green-light);
+  padding-left: 0.85rem;
 }
 
-.sidebar-sub .sidebar-sub {
-  margin-left: 0.5rem;
+/* --- Who's Online Widget Polish --- */
+.online-status {
+  padding: 0.85rem 1.15rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.online-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  flex-shrink: 0;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
 }
 
 /* --- Login Widget --- */
@@ -842,23 +895,6 @@ img {
 
 .login-links a:hover {
   color: var(--green);
-}
-
-/* --- Who's Online --- */
-.online-status {
-  padding: 1rem 1.25rem;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.online-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border);
 }
 
 /* --- Footer --- */
