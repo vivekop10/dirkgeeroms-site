@@ -5,7 +5,7 @@ old web/
 image_urls.txt
 download_images.js
 *.log
-wp-content/gallery/
+optimize_gallery.py
 server.js
 build_pages.js
 fix_site_comprehensive.js
