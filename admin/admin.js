@@ -1,4 +1,5 @@
 // Admin Control Panel Logic for dirkgeeroms.be
+// Upgraded with SVG icons, Document Library, WYSIWYG helper, and DB Exporter
 
 let currentAdminUser = null;
 let isUnlockedViaKey = false;
@@ -14,7 +15,7 @@ function showNotice(msg, isSuccess = true) {
   notification.style.background = isSuccess ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
   notification.style.border = isSuccess ? '1px solid rgba(34,197,94,0.3)' : '1px solid rgba(239,68,68,0.3)';
   notification.style.color = isSuccess ? '#22c55e' : '#ef4444';
-  setTimeout(() => notification.style.display = 'none', 4000);
+  setTimeout(() => notification.style.display = 'none', 4500);
 }
 
 // Tab Switching
@@ -42,6 +43,7 @@ function unlockAdminInterface(email = 'Admin') {
   loadStats();
   loadPageEditorContent('homepage');
   loadMediaLibrary();
+  loadDocumentsLibrary();
   loadLinksList();
   loadUsersTable();
   loadAnnouncementBanner();
@@ -74,7 +76,6 @@ auth.onAuthStateChanged(async (user) => {
     if (profile && (profile.role === 'admin' || profile.role === 'teacher')) {
       unlockAdminInterface(user.email);
     } else {
-      // Prompt user to activate
       authGate.style.display = 'block';
       adminDashboard.style.display = 'none';
     }
@@ -103,13 +104,24 @@ async function loadStats() {
 }
 
 // ============================================================
-//  2. CONTENT / PAGE TEXT EDITOR
+//  2. CONTENT / PAGE TEXT EDITOR & TOOLBAR
 // ============================================================
 const pageSelect = document.getElementById('pageSelect');
 const contentTitle = document.getElementById('contentTitle');
 const contentBody = document.getElementById('contentBody');
 const saveContentBtn = document.getElementById('saveContentBtn');
 const saveStatus = document.getElementById('saveStatus');
+
+function insertFormat(before, after) {
+  const start = contentBody.selectionStart;
+  const end = contentBody.selectionEnd;
+  const selectedText = contentBody.value.substring(start, end);
+  const replacement = before + (selectedText || 'text') + after;
+  contentBody.value = contentBody.value.substring(0, start) + replacement + contentBody.value.substring(end);
+  contentBody.focus();
+  contentBody.selectionStart = start + before.length;
+  contentBody.selectionEnd = start + before.length + (selectedText ? selectedText.length : 4);
+}
 
 async function loadPageEditorContent(pageId) {
   saveStatus.textContent = 'Loading content...';
@@ -149,7 +161,10 @@ saveContentBtn.addEventListener('click', async () => {
     showNotice('Failed to save: ' + e.message, false);
   } finally {
     saveContentBtn.disabled = false;
-    saveContentBtn.textContent = '💾 Save & Publish Changes';
+    saveContentBtn.innerHTML = `
+      <svg viewBox="0 0 24 24" class="svg-icon" style="width:16px; height:16px;"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+      Save & Publish Changes
+    `;
   }
 });
 
@@ -198,7 +213,6 @@ async function handleFileUploads(files) {
         progressBar.style.width = pct + '%';
       });
 
-      // Save reference to Firestore
       await db.collection('media').add({
         name: file.name,
         url: url,
@@ -220,7 +234,7 @@ async function handleFileUploads(files) {
 
 async function loadMediaLibrary() {
   try {
-    const snap = await db.collection('media').orderBy('uploadedAt', 'desc').limit(24).get();
+    const snap = await db.collection('media').orderBy('uploadedAt', 'desc').limit(30).get();
     if (snap.empty) {
       mediaGrid.innerHTML = `<div style="grid-column: 1 / -1; color:var(--text-muted); font-size:0.9rem;">No photos uploaded yet. Drop photos above to start your collection.</div>`;
       document.getElementById('statPhotoCount').textContent = '0';
@@ -237,9 +251,14 @@ async function loadMediaLibrary() {
         <img src="${data.url}" alt="${data.name}" loading="lazy">
         <div class="media-card-info">
           <span style="font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${data.name}">${data.name}</span>
-          <button class="btn-login" style="padding:4px 8px; font-size:0.75rem; background:var(--surface); border:1px solid var(--border); color:var(--text);" onclick="copyToClipboard('${data.url}')">
-            📋 Copy URL
-          </button>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-login" style="flex:1; padding:4px 8px; font-size:0.75rem; background:var(--surface); border:1px solid var(--border); color:var(--text);" onclick="copyToClipboard('${data.url}')">
+              Copy URL
+            </button>
+            <button onclick="deleteMediaDoc('${doc.id}')" style="background:none; border:1px solid rgba(239,68,68,0.3); color:#ef4444; border-radius:4px; padding:2px 8px; cursor:pointer;" title="Delete">
+              ✕
+            </button>
+          </div>
         </div>
       `;
       mediaGrid.appendChild(card);
@@ -249,14 +268,105 @@ async function loadMediaLibrary() {
   }
 }
 
+async function deleteMediaDoc(docId) {
+  if (confirm('Delete this photo reference?')) {
+    await db.collection('media').doc(docId).delete();
+    showNotice('Photo reference removed.');
+    loadMediaLibrary();
+  }
+}
+
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    showNotice('Image URL copied to clipboard!');
+    showNotice('Link copied to clipboard!');
   });
 }
 
 // ============================================================
-//  4. LINKS & NAV MANAGER
+//  4. PDF & DOCUMENT MANAGER
+// ============================================================
+const docUploadForm = document.getElementById('docUploadForm');
+const documentsList = document.getElementById('documentsList');
+
+docUploadForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const title = document.getElementById('docTitle').value.trim();
+  const grade = document.getElementById('docGrade').value;
+  const fileInput = document.getElementById('docFile');
+  const btn = document.getElementById('docUploadBtn');
+
+  if (!fileInput.files.length) return;
+  const file = fileInput.files[0];
+
+  btn.disabled = true;
+  btn.textContent = 'Uploading Document...';
+
+  try {
+    const path = `documents/${Date.now()}_${file.name.replace(/\s+/g, '_')}`;
+    const url = await uploadFile(file, path);
+
+    await db.collection('documents').add({
+      title,
+      grade,
+      fileName: file.name,
+      url,
+      size: file.size,
+      uploadedAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    showNotice(`Document "${title}" uploaded to library!`);
+    docUploadForm.reset();
+    loadDocumentsLibrary();
+  } catch (err) {
+    showNotice('Document upload failed: ' + err.message, false);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Upload to Student Library';
+  }
+});
+
+async function loadDocumentsLibrary() {
+  try {
+    const snap = await db.collection('documents').orderBy('uploadedAt', 'desc').get();
+    if (snap.empty) {
+      documentsList.innerHTML = `<div style="color:var(--text-muted); font-size:0.9rem;">No documents uploaded yet. Upload PDFs or worksheets above.</div>`;
+      return;
+    }
+    documentsList.innerHTML = '';
+    snap.docs.forEach(doc => {
+      const d = doc.data();
+      const item = document.createElement('div');
+      item.style.cssText = 'background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center;';
+      item.innerHTML = `
+        <div>
+          <a href="${d.url}" target="_blank" style="font-weight:700; text-decoration:none; color:var(--primary); font-size:0.95rem;">📄 ${d.title}</a>
+          <span style="font-size:0.8rem; color:var(--text-muted); margin-left:8px;">[${d.grade}]</span>
+          <div style="font-size:0.8rem; color:var(--text-muted); margin-top:2px;">File: ${d.fileName}</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <button class="btn-login" style="padding:4px 10px; font-size:0.78rem; background:var(--surface); border:1px solid var(--border); color:var(--text);" onclick="copyToClipboard('${d.url}')">
+            Copy Download Link
+          </button>
+          <button onclick="deleteDocFile('${doc.id}')" style="background:none; border:none; color:#ef4444; cursor:pointer; font-weight:bold; font-size:1.1rem;">✕</button>
+        </div>
+      `;
+      documentsList.appendChild(item);
+    });
+  } catch (e) {
+    console.error('Error loading documents:', e);
+  }
+}
+
+async function deleteDocFile(docId) {
+  if (confirm('Delete this document?')) {
+    await db.collection('documents').doc(docId).delete();
+    showNotice('Document removed.');
+    loadDocumentsLibrary();
+  }
+}
+
+// ============================================================
+//  5. LINKS & NAV MANAGER
 // ============================================================
 const addLinkForm = document.getElementById('addLinkForm');
 const activeLinksList = document.getElementById('activeLinksList');
@@ -318,7 +428,7 @@ async function deleteLinkDoc(docId) {
 }
 
 // ============================================================
-//  5. USER MANAGEMENT TABLE
+//  6. USER MANAGEMENT TABLE
 // ============================================================
 async function loadUsersTable() {
   const tbody = document.getElementById('userTableBody');
@@ -360,7 +470,7 @@ async function changeUserRole(uid, newRole) {
 }
 
 // ============================================================
-//  6. ANNOUNCEMENT BANNER
+//  7. ANNOUNCEMENT BANNER
 // ============================================================
 const announcementForm = document.getElementById('announcementForm');
 const announceActive = document.getElementById('announceActive');
@@ -390,10 +500,23 @@ announcementForm.addEventListener('submit', async (e) => {
       link: announceLink.value.trim(),
       updatedAt: firebase.firestore.FieldValue.serverTimestamp()
     });
-    showNotice('Site announcement updated successfully!');
+    showNotice('Global notice banner saved!');
   } catch (e) {
-    showNotice('Failed to update announcement: ' + e.message, false);
+    showNotice('Failed to update notice: ' + e.message, false);
   }
 });
 
-console.log('🛡️ Admin CMS logic loaded.');
+// ============================================================
+//  8. DATABASE 1-CLICK EXPORT & BACKUP
+// ============================================================
+document.getElementById('exportDbBtn').addEventListener('click', async () => {
+  try {
+    showNotice('Preparing complete JSON database archive...');
+    await exportDatabaseBackup();
+    showNotice('🎉 Database backup exported successfully!');
+  } catch (e) {
+    showNotice('Backup failed: ' + e.message, false);
+  }
+});
+
+console.log('🛡️ Admin CMS logic active with full toolkit.');
