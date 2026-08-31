@@ -1,8 +1,0 @@
-{
-  "name": "dirkgeeroms-site",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "build": "echo 'Building static site...'"
-  }
-}
