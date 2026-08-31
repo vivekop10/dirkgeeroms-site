@@ -6,3 +6,12 @@ image_urls.txt
 download_images.js
 *.log
 wp-content/gallery/
+server.js
+build_pages.js
+fix_site_comprehensive.js
+clean_scripts.js
+scraper.py
+build_site.py
+analyze_assets.py
+localize_assets.py
+localize_images.js
