@@ -15,3 +15,4 @@ build_site.py
 analyze_assets.py
 localize_assets.py
 localize_images.js
+migrate_gallery_paths.js
